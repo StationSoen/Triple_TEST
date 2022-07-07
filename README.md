@@ -5,10 +5,17 @@
 # 프로젝트 실행 방법
 
 📌  프로젝트 클론
-
+ ```
+git clone https://github.com/StationSoen/Triple_TEST.git
+ ```
 📌  클론 받은 위치로 이동
-
-📌  `yarn install && yarn build && yarn start`
+```
+cd Triple_TEST
+```
+📌 라이브러리 설치 & 빌드 & 실행
+```
+yarn install && yarn build && yarn start
+```
 
 # 사용한 기술과 선택한 이유
 

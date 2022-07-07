@@ -1,7 +1,7 @@
-import React from "react";
-import { Section } from "./Pages";
+import React from 'react'
+import { Section } from './Pages'
 
 const App = () => {
-  return <Section />;
-};
-export default App;
+  return <Section />
+}
+export default App

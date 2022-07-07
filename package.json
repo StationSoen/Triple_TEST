@@ -1,6 +1,7 @@
 {
   "name": "triple_test",
   "version": "0.1.0",
+  "prettier": "@titicaca/eslint-config-triple/prettierrc",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.4",
@@ -23,7 +24,11 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint:es": "eslint '**/*.{js,ts,tsx}'",
+    "lint:es:fix": "npm run lint:es -- --fix",
+    "prettier": "prettier '**/*' --check",
+    "prettier:fix": "prettier '**/*' --write"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@titicaca/eslint-config-triple": "^3.1.0",
     "@types/styled-components": "^5.1.25",
     "craco-alias": "^3.0.1"
   }

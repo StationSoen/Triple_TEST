@@ -1,1 +1,1 @@
-export { imgUtil } from "./image/image_container";
+export { imgUtil } from './image/image_container'

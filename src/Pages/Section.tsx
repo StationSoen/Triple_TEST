@@ -1,5 +1,5 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React from 'react'
+import styled, { keyframes } from 'styled-components'
 
 import {
   Badge,
@@ -8,9 +8,9 @@ import {
   IndicatorText,
   Margin,
   Text,
-} from "~/components";
-import { imgUtil } from "~/asset";
-import { colors } from "~/constants";
+} from '~/components'
+import { imgUtil } from '~/asset'
+import { colors } from '~/constants'
 
 const MainContainer = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const MainContainer = styled.div`
   width: 100vw;
   align-items: center;
   justify-content: center;
-`;
+`
 
 const ContentContainer = styled.div`
   display: flex;
@@ -31,7 +31,7 @@ const ContentContainer = styled.div`
   padding-bottom: 64px;
   padding-left: 55.55px;
   padding-right: 55.55px;
-`;
+`
 
 const TimelineTextContainer = styled.div`
   display: flex;
@@ -41,7 +41,7 @@ const TimelineTextContainer = styled.div`
   height: 100%auto;
   padding-top: 280px;
   justify-content: center;
-`;
+`
 
 const onLoad = keyframes`
 from {
@@ -51,7 +51,7 @@ from {
 to {
     opacity: 1;
 }
-`;
+`
 
 const AnimationContainer = styled(Container.Col)<{ delay: number }>`
   animation-delay: ${(props) => props.delay}ms;
@@ -59,7 +59,7 @@ const AnimationContainer = styled(Container.Col)<{ delay: number }>`
   animation-timing-function: ease-out;
   animation-name: ${onLoad};
   animation-fill-mode: forwards;
-`;
+`
 
 const Section = () => {
   return (
@@ -68,12 +68,12 @@ const Section = () => {
       <ContentContainer>
         {/* 로고 & 날짜 */}
         <AnimationContainer delay={0}>
-          <Container.Row style={{ justifyContent: "center" }}>
+          <Container.Row style={{ justifyContent: 'center' }}>
             <Img src={imgUtil.tripleLogo} width={400} aspectRatio={1.183} />
             <TimelineTextContainer>
               <Text
-                text={"2019년 2월 기준"}
-                color={colors.black + "B3"}
+                text={'2019년 2월 기준'}
+                color={colors.black + 'B3'}
                 fontSize={15}
               />
             </TimelineTextContainer>
@@ -96,21 +96,21 @@ const Section = () => {
             <Container.Row>
               <Badge
                 logo={imgUtil.playStore}
-                text1={"2018 구글 플레이스토어"}
-                text2={"올해의 앱 최우수상 수상"}
+                text1={'2018 구글 플레이스토어'}
+                text2={'올해의 앱 최우수상 수상'}
               />
               <Margin.H margin={39} />
               <Badge
                 logo={imgUtil.appStore}
-                text1={"2018 애플 앱스토어"}
-                text2={"오늘의 여행앱 선정"}
+                text1={'2018 애플 앱스토어'}
+                text2={'오늘의 여행앱 선정'}
               />
             </Container.Row>
           </AnimationContainer>
         </Container.Col>
       </ContentContainer>
     </MainContainer>
-  );
-};
+  )
+}
 
-export default Section;
+export default Section

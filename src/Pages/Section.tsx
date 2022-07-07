@@ -25,8 +25,8 @@ const ContentContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  width: 1200px;
-  min-width: 1200px;
+  width: 1040px;
+  min-width: 1040px;
   padding-top: 150px;
   padding-bottom: 64px;
   padding-left: 55.55px;

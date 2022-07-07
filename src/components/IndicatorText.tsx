@@ -4,9 +4,14 @@ import { useEffect } from "react";
 import { Container, Text } from "~/components";
 import { colors } from "~/constants";
 
-const easeOutSine = (x: number): number => {
-  // EASEOUT function : input (0~1), output (0~1)
-  return Math.sin((x * Math.PI) / 2);
+const easeOut = (x: number): number => {
+  if (x <= 0) {
+    return 0;
+  }
+  if (x >= 1) {
+    return 1;
+  }
+  return x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
 };
 
 interface IndicatorTextProps {
@@ -22,8 +27,8 @@ const IndicatorText = ({ boldNumber, boldText, text }: IndicatorTextProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       counter.current = counter.current + 10 / 2000;
-      setNumber(() => easeOutSine(counter.current) * boldNumber);
-      if (counter.current >= 1) {
+      setNumber(() => easeOut(counter.current) * boldNumber);
+      if (counter.current > 1) {
         clearInterval(interval);
       }
     }, 10);
@@ -33,7 +38,7 @@ const IndicatorText = ({ boldNumber, boldText, text }: IndicatorTextProps) => {
   return (
     <Container.Row>
       <Text
-        text={`${~~number}`}
+        text={`${Math.round(number)}`}
         color={colors.black}
         fontSize={36}
         style={{ fontWeight: "bold" }}

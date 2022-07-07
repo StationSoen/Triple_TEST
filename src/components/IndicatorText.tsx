@@ -21,17 +21,24 @@ interface IndicatorTextProps {
 }
 
 const IndicatorText = ({ boldNumber, boldText, text }: IndicatorTextProps) => {
+  // states
   const [number, setNumber] = useState<number>(0)
+
+  // ref
   const counter = useRef<number>(0)
 
+  // vals
+  const timeInterval = 10
+
+  // use Effect
   useEffect(() => {
     const interval = setInterval(() => {
-      counter.current = counter.current + 10 / 2000
+      counter.current = counter.current + timeInterval / 2000
       setNumber(() => easeOut(counter.current) * boldNumber)
       if (counter.current > 1) {
         clearInterval(interval)
       }
-    }, 10)
+    }, timeInterval)
     return () => clearInterval(interval)
   }, [boldNumber])
 

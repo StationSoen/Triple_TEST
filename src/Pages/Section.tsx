@@ -45,8 +45,8 @@ const TimelineTextContainer = styled.div`
 
 const onLoad = keyframes`
 from {
-    opacity: 0.3;
-    transform: translateY(50px);
+    opacity: 0.1;
+    transform: translateY(30px);
 }
 to {
     opacity: 1;
@@ -58,18 +58,22 @@ const AnimationContainer = styled(Container.Col)<{ delay: number }>`
   animation-duration: 700ms;
   animation-timing-function: ease-out;
   animation-name: ${onLoad};
-  animation-fill-mode: forwards;
 `
 
 const Section = () => {
   return (
     <MainContainer>
-      {/* 1200px */}
+      {/* 1040px */}
       <ContentContainer>
         {/* 로고 & 날짜 */}
         <AnimationContainer delay={0}>
           <Container.Row style={{ justifyContent: 'center' }}>
-            <Img src={imgUtil.tripleLogo} width={400} aspectRatio={1.183} />
+            <Img
+              src={imgUtil.tripleLogo}
+              width={400}
+              aspectRatio={1.183}
+              alt={'Triple Logo with google play store prize'}
+            />
             <TimelineTextContainer>
               <Text
                 text={'2019년 2월 기준'}
@@ -98,12 +102,14 @@ const Section = () => {
                 logo={imgUtil.playStore}
                 text1={'2018 구글 플레이스토어'}
                 text2={'올해의 앱 최우수상 수상'}
+                alt={'play store logo'}
               />
               <Margin.H margin={39} />
               <Badge
                 logo={imgUtil.appStore}
                 text1={'2018 애플 앱스토어'}
                 text2={'오늘의 여행앱 선정'}
+                alt={'app store logo'}
               />
             </Container.Row>
           </AnimationContainer>

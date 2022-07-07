@@ -7,11 +7,12 @@ interface BadgeProps {
   text1: string
   text2: string
   logo: any
+  alt: string
 }
-const Badge = ({ text1, text2, logo }: BadgeProps) => {
+const Badge = ({ text1, text2, logo, alt }: BadgeProps) => {
   return (
     <Container.Row>
-      <Img src={logo} width={54} aspectRatio={1} />
+      <Img src={logo} alt={alt} width={54} aspectRatio={1} />
       <Margin.H margin={8} />
       <Container.Col style={{ justifyContent: 'center' }}>
         <Text
